@@ -3,10 +3,10 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.avr128da48-cnano-adc-temperature-measurement",
+        "name": "com.microchip.mcu8.mplabx.project.avr128da48-cnano-adc-temperature-measurement-mplab",
         "version": "1.0.0",
         "displayName": "ADC Temperature Measurement",
-        "projectName": "avr128da48-cnano-adc-temperature-measurement",
+        "projectName": "avr128da48-cnano-adc-temperature-measurement-mplab",
         "shortDescription": "This application showcases a basic example of how to measure the temperature using the ADC on the AVR-DA devices.",
         "ide": {
             "name": "MPLABX",
