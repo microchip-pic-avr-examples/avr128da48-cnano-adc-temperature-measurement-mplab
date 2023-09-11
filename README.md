@@ -1,35 +1,40 @@
-<div id="readme" class="Box-body readme blob js-code-block-container">
- <article class="markdown-body entry-content p-3 p-md-6" itemprop="This needs to locked down and 'never' changed"><p><a href="https://www.microchip.com" rel="nofollow"><img src="images/Microchip.png" alt="MCHP" width="300";"></a></p>
+<!-- Please do not change this html logo with link -->
 
-# AVR128DA48 ADC Temperature Measurement
+<a href="https://www.microchip.com" rel="nofollow"><img src="images/Microchip.png" alt="MCHP" width="300"/></a>
+
+# Analog-to-Digital Converter (ADC) - Temperature Measurement Using AVR128DA48 Microcontroller
 
 ## Objective
 
-In this application, the ADC will be used to measure the temperature, and the results will be transmitted through USART.
-The software diagram of this application is presented in the figure below.
-<br><img src="images/soft_diagram.jpg" width="200">
+In this application, the ADC will be used to measure the temperature using the on-board specific sensor, and the results will be transmitted through Universal Synchronous/Asynchronous Receiver/Transmitter (USART). The software's example code diagram is presented in the figure below.
 
 ## Related Documentation
 
+More details and code examples on the AVR128DA48 can be found at the following links:
+
+- [AVR128DA48 Product Page](https://www.microchip.com/wwwproducts/en/AVR128DA48)
+- [AVR128DA48 Code Examples on GitHub](https://github.com/microchip-pic-avr-examples?q=avr128da48)
 - [Using 12-Bit ADC for Conversions, Accumulation, and Triggering Events](https://www.microchip.com/wwwappnotes/appnotes.aspx?appnote=en1001530)
-- [AVR128DA48 Product Family Page](https://www.microchip.com/design-centers/8-bit/avr-mcus/device-selection/avr-da)
-- [AVR128DA48 Data Sheet](http://ww1.microchip.com/downloads/en/DeviceDoc/40002183A.pdf)
 
 ## Software Used
 
-- MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB® XC8 2.20 or newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-- MPLAB® Data Visualizer plugin 1.1 
-- AVR-Dx_DFP 1.4.75
+- [MPLAB® X IDE](http://www.microchip.com/mplab/mplab-x-ide) v6.15 or newer
+- [MPLAB® XC8](http://www.microchip.com/mplab/compilers) v2.45 or newer
+- [AVR-Dx Series Device Pack](https://packs.download.microchip.com/) v2.3.272 or newer
+- [MPLAB® Data Visualizer](https://www.microchip.com/en-us/tools-resources/debug/mplab-data-visualizer)
 
 ## Hardware Used
 
-- AVR128DA48 Curiosity Nano [(DM164151)](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/DM164151)
-- Curiosity Nano Base for Click boards™ [(AC164162)](https://www.microchip.com/developmenttools/ProductDetails/AC164162)
+- [AVR128DA48 Curiosity Nano Development board](https://www.microchip.com/en-us/development-tool/DM164151) is used as a test platform.
+<br><img src="images/AVR128DA48_CNANO_instructions.png" width="800">
+
+## Operation
+
+To program the Curiosity Nano board with this MPLAB X project, follow the steps provided in the [How to Program the Curiosity Nano Board](#how-to-program-the-curiosity-nano-board) chapter.<br><br>
 
 ## Setup
 
-The AVR128DA48 Curiosity Nano Development Board is used as the test platform. To integrate the POT Click board, the Curiosity Nano Base for Click boards is used.
+The AVR128DA48 Curiosity Nano Development Board is used as the test platform. The internal temperature sensor is used for measurements as input of the ADC.
 
 <br>The following configurations must be made:
 
@@ -37,42 +42,84 @@ The AVR128DA48 Curiosity Nano Development Board is used as the test platform. To
 | :----------: | :----------------: |
 |PC0 (TX)      | Digital Output     |
 
-## Operation
+## Demo
 
-1. Connect the board to the PC.
+After alternatively cooling and warming up the microcontroller, the converted sensor's temperature from the ADC result will be plotted on the graph from Data Visualizer plugin, as in below picture. Follow the steps in the **[How to use MPLAB Data Visualizer](#how-to-use-mplab-data-visualizer)** section to set up the Data Visualizer so that it can correctly view the plotted values through USART.
 
-2. Open the *avr128da48-cnano-adc-temperature-measurement-mplab.X* project in MPLAB® X IDE.
+<br><img src="images/data_visualizer_data.png" alt="Demo" width="800"/>
 
-3. Set *avr128da48-cnano-adc-temperature-measurement-mplab.X* project as main project. Right click on the project in the *Projects* tab and click *Set as Main Project*:
-
-<br><img src="images/0_0.png" width="400">
-
-4. Select the AVR128DA48 Curiosity Nano in the *Connected Hardware Tool* drop down list of the project settings:
-  - Right click on the project and click *Properties*;
-  - Select the AVR128DA48 Curiosity Nano (click on the SN) in the *Connected Hardware Tool* list and then click *OK*:
-
-<br><img src="images/0_1.png" width="700">
-
-5. Program the project to the board: right click on the project and click *Make and Program Device*:
-
-<br><img src="images/0_2.png" width="400">
-
-6. Open the Data Visualizer
-<br><img src="images/0_3.png" width="400">
-   - From the Curiosity Nano COMn port, open the drop down list:
-<br><img src="images/1.png">
-   - From the drop down list, select New variable streamer...:
-<br><img src="images/2.png">
-   - Configure the Variable Streamer Name and add the desired variable, then click Next:
-<br><img src="images/3.png" width="600">
-   - Select all the variables to plot, select New axis per data type, and click Finish:
-<br><img src="images/4.png" width="600">
-
-Result:
-
-After alternatively cooling and warming up the microcontroller (after starting the application), the ADC result will be plotted on the graph:
-<br><img src="images/5.png" alt="Demo" width="800"/>
+**Note:** The plotted variable called ```ADC_value``` must be configured as ```int16``` type.
 
 ## Summary 
 
 This application showcases a basic example of how to measure the temperature using the ADC on the AVR-DA devices. 
+
+## How to use MPLAB Data Visualizer
+
+This section illustrates how to use the MPLAB X Data Visualizer to send commands and receive information, but prior to programming the AVR128DA48 Curiosity Nano Board. This can be applied to any other projects.
+
+1. Open the software terminal in MPLAB X IDE. Click on the **Data Visualizer** button.
+
+<br><img src="images/data_visualizer_button.png" width="800">
+
+2. Prepare the settings in Data Visualizer.
+- Click on the specific serial port communication **COMx**
+- Set the correct **Baud Rate**
+- In the **Connections** tab, at the **COMx** option, press **New variable streamer...**
+- Type a specific **Variable Streamer Name**
+- Choose **Ones' Complement** from the **Framing Mode** dropdown menu
+- Type a specific value from the **Start of Frame**, press **Add a variable**
+- Type a specific name for the variable name in **Variable Name**
+- Press **Next**, after that press **Next** again
+- Optional: Save these settings as a json file by pressing **Save as**
+
+<br><img src="images/plot_streaming_data.png" width="800">
+
+3. See the expected result on Data Visualizer.
+- Select **Source** from Time Plot window
+- Click **Start Streaming COMx** the communication serial port
+- Click **Scroll axis automatically**.
+
+<br><img src="./images/data_visualizer_ramp.png" width="800">
+
+##  How to Program the Curiosity Nano board
+
+This chapter shows how to use the MPLAB X IDE to program an AVR® device with an Example_Project.X. This can be applied for any other projects. 
+
+- Connect the board to the PC.
+
+- Open the Example_Project.X project in MPLAB X IDE.
+
+- Set the Example_Project.X project as main project.
+
+  - Right click on the project in the **Projects** tab and click **Set as Main Project**.
+    <br><img src="images/program_set_as_main_project.png" width="500">
+
+- Clean and build the Example_Project.X project.
+
+  - Right click on the **Example_Project.X** project and select **Clean and Build**.
+    <br><img src="images/program_clean_and_build.png" width="500">
+
+- Select the **AVRxxxxx Curiosity Nano** in the Connected Hardware Tool section of the project settings:
+
+  - Right click on the project and click **Properties**
+  - Click on the arrow under the Connected Hardware Tool
+  - Select the **AVRxxxxx Curiosity Nano** (click on the **SN**), click **Apply** and then click **OK**:
+    <br><img src="images/program_tool_selection.png" width="500">
+
+- Program the project to the board.
+  - Right click on the project and click **Make and Program Device**.
+    <br><img src="images/program_make_and_program_device.png" width="500">
+
+<br>
+
+- - -
+## Menu
+- [Back to Top](#analog-to-digital-converter-adc---temperature-measurement-using-avr128da48-microcontroller)
+- [Back to Related Documentation](#related-documentation)
+- [Back to Software Used](#software-used)
+- [Back to Hardware Used](#hardware-used)
+- [Back to Operation](#operation)
+- [Back to Setup](#setup)
+- [Back to Demo](#demo)
+- [Back to Summary](#summary)
