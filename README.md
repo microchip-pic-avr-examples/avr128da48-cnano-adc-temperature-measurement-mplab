@@ -4,7 +4,7 @@
 
 # Analog-to-Digital Converter (ADC) - Temperature Measurement Using AVR128DA48 Microcontroller
 
-In this application, the ADC will be used to measure the temperature using the on-board specific sensor, and the results will be transmitted through Universal Synchronous/Asynchronous Receiver/Transmitter (USART). The software's example code diagram is presented in the figure below.
+In this application, the ADC will be used to measure the temperature using the on-board specific sensor, and the results will be transmitted through UUniversal Synchronous and Asynchronous Receiver and Transmitter (USART). The software's example code diagram is presented in the figure below.
 <br><img src="images/soft_diagram.png" width="200">
 
 ## Related Documentation
@@ -33,7 +33,7 @@ To program the Curiosity Nano board with this MPLAB X project, follow the steps 
 
 ## Setup
 
-The AVR128DA48 Curiosity Nano Development Board is used as the test platform. The internal temperature sensor is used for measurements as input of the ADC.
+The AVR128DA48 Curiosity Nano Development Board is used as the test platform. As an input of the ADC, the internal temperature sensor is used for measurements.
 <br>The following pin configuration must be made for this project:
 
 |Pin           | Configuration      |
@@ -42,17 +42,17 @@ The AVR128DA48 Curiosity Nano Development Board is used as the test platform. Th
 
 ## Demo
 
-After alternatively cooling and warming up the microcontroller, the converted sensor's temperature from the ADC result will be plotted on the graph from Data Visualizer plugin, as in below picture. Follow the steps in the **[How to use MPLAB Data Visualizer](#how-to-use-mplab-data-visualizer)** section to set up the Data Visualizer so that it can correctly view the plotted values through USART.
+After alternatively cooling and warming up the microcontroller, the converted sensor's temperature from the ADC result will be plotted on the graph from Data Visualizer plugin, as in picture below. Follow the steps in the **[How to Use the MPLAB Data Visualizer](#how-to-use-the-mplab-data-visualizer)** section to set up the Data Visualizer, so that it can accurately view the plotted values through USART.
 
 <br><img src="images/data_visualizer_data.png" alt="Demo" width="800"/>
 
-**Note:** The plotted variable called ```ADC_result``` on Data Visualiser plugin must be configured as ```int16``` type.
+**Note:** The plotted variable called ```ADC_result``` on the Data Visualiser plugin must be configured as ```int16``` type.
 
 ## Summary 
 
-This application showcases a basic example of how to measure the temperature using the ADC on the AVR-DA devices. 
+This application showcases how the AVR-DA devices measure the temperature using the ADC. 
 
-## How to use MPLAB Data Visualizer
+## How to Use the MPLAB Data Visualizer
 
 This section illustrates how to use the MPLAB X Data Visualizer to send commands and receive information, but prior to programming the AVR128DA48 Curiosity Nano Board. This can be applied to any other projects.
 
