@@ -4,7 +4,7 @@
 
 # Analog-to-Digital Converter (ADC) - Temperature Measurement Using AVR128DA48 Microcontroller
 
-In this application, the ADC will be used to measure the temperature using the on-board specific sensor, and the results will be transmitted through UUniversal Synchronous and Asynchronous Receiver and Transmitter (USART). The software's example code diagram is presented in the figure below.
+In this application, the ADC will be used to measure the temperature using the on-board specific sensor, and the results will be transmitted through Universal Synchronous and Asynchronous Receiver and Transmitter (USART). The software's example code diagram is presented in the figure below.
 <br><img src="images/soft_diagram.png" width="200">
 
 ## Related Documentation
@@ -33,7 +33,7 @@ To program the Curiosity Nano board with this MPLAB X project, follow the steps 
 
 ## Setup
 
-The AVR128DA48 Curiosity Nano Development Board is used as the test platform. As an input of the ADC, the internal temperature sensor is used for measurements.
+As an input of the ADC, the internal temperature sensor is used for measurements.
 <br>The following pin configuration must be made for this project:
 
 |Pin           | Configuration      |
